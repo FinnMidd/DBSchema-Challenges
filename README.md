@@ -13,7 +13,7 @@ Explore the `Challenges` directory to find unique scenarios that require designi
 
 ## Solutions
 
-Discover proposed solutions to challenges in the `Solutions` directory. Solutions are provided in the form of SQL scripts (`solution.sql`) to help you compare your approach with others.
+Discover proposed solutions to challenges in the `Solutions` directory. Solutions are provided in the form of markdown files (`solution.md`) to help you compare your approach with others.
 
 ## SQL Scripts
 
