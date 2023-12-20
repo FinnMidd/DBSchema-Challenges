@@ -1,4 +1,4 @@
-# Challenge: Bomb Squad Inventory Management System
+# Challenge: Military Bomb Squad Inventory Management System
 
 ## Scenario
 
@@ -29,7 +29,7 @@ You are tasked with designing a database for a Military Bomb Squad Inventory Man
 
 1. Design the database schema to represent the entities and relationships described in the requirements.
 2. Include primary and foreign key constraints where necessary.
-3. Consider any additional attributes or constraints that would enhance the functionality of the Bomb Squad Inventory Management System.
+3. Consider any additional attributes or constraints that would enhance the functionality of the Military Bomb Squad Inventory Management System.
 
 ## Notes
 
