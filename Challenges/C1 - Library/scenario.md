@@ -7,22 +7,23 @@ You have been tasked with designing a database for a Library Management System. 
 ## Requirements
 
 1. **Books:**
-   - Each book has a unique ISBN, title, author(s), and publication year.
+   - Each book has a unique ISBN, title, author, and publication year.
    - Books can belong to multiple genres.
+   - You may assume books only have a single author.
 
 2. **Users:**
    - Users are categorized into staff and library members.
-   - Staff members have additional information such as position and contact details.
-   - Library members have a membership ID, name, contact information, and a membership start date.
+   - Staff members will have additional information such as their job position.
+   - Library members possess information such as their name, contact information, and a membership start date.
 
 3. **Transactions:**
    - Transactions involve borrowing and returning books.
    - Each transaction should be recorded with the date and time.
-   - Overdue transactions should be tracked.
+   - Overdue transactions should be tracked along with the expected returns.
 
 4. **Inventory:**
-   - The system should keep track of the quantity of each book available in the library.
-   - Should any book be unavailable, the inventory should track its expected return.
+   - Manage and track individual copies of each book.
+   - Each copy is assigned an availability status e.g. available, borrowed, overdue, removed, etc.
 
 5. **Genres:**
    - Each genre has a name and description.
