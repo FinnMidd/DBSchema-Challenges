@@ -49,9 +49,9 @@ This document outlines the database solution for a Library Management System, in
   - Transaction ID (Primary Key)
   - User ID (Foreign Key to Users)
   - Copy ID (Foreign Key to Inventory)
-  - Transaction Type (borrow or return)
   - Transaction Date
   - Expected Return Date
+  - Actual Return Date
 
 ### 5. Inventory
 
@@ -70,10 +70,28 @@ This document outlines the database solution for a Library Management System, in
 
 ## Queries & Views
 
-### 1. Returns
+### 1. Check Awaiting Returns
 
 - A view to track both overdue and expected return transactions.
 - Includes transactions where books have been borrowed and yet to be returned.
+
+```sql
+CREATE VIEW Returns AS
+SELECT TransactionID, UserID, CopyID, TransactionDate, ExpectedReturnDate, ReceivedReturnDate
+FROM Transactions
+WHERE (ReceivedReturnDate IS NULL AND ExpectedReturnDate < CURRENT_DATE);
+```
+
+### 2. Update Transactions on Return
+
+- A query that helps update the transaction table when a book is returned.
+- Made when a book has been received and entered back into the system.
+
+```sql
+UPDATE Transactions
+SET ReceivedReturnDate = CURRENT_DATE
+WHERE CopyID = [InputCopyID] AND ReceivedReturnDate IS NULL;
+```
 
 ## Notes
 
