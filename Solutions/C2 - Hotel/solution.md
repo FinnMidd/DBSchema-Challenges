@@ -72,7 +72,6 @@ This document outlines the database solution for a Hotel Reservation System, inc
   - Invoice ID (Primary Key)
   - Guest ID (Foreign Key to Guests)
   - Issue Date
-  - Total Cost
   - Paid Status
 
 ### 8. InvoiceReservationLink (Associative Table)
@@ -91,11 +90,11 @@ This document outlines the database solution for a Hotel Reservation System, inc
   - Invoice ID (Foreign Key to Invoices)
   - Service ID (Foreign Key to Services)
 
-## Views
+## Queries &  Views
 
 ### 1. TotalCost
 
-- A view to check the total cost of reservations and services ordered by the guests.
+- A query to check the total cost of reservations and services ordered by the guests.
 - Includes information on reservations and information on purchased services.
 
 ### 2. RoomOccupancy

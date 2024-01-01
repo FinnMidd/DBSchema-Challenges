@@ -68,7 +68,7 @@ This document outlines the database solution for a Library Management System, in
   - ISBN (Foreign Key to Books)
   - Genre ID (Foreign Key to Genres)
 
-## Views
+## Queries & Views
 
 ### 1. Returns
 
