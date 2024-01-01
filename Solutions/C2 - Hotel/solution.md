@@ -13,23 +13,23 @@ This document outlines the database solution for a Hotel Reservation System, inc
 
 ## Tables
 
-### 1. Rooms
+### 1. Guests
 
-- Contains information about each room in the hotel.
-- Attributes:
-  - Room Number (Primary Key)
-  - Type
-  - Rate per Night
-
-### 2. Guests
-
-- Stores details about hotel guests.
+- Contains information on each hotel guest.
 - Attributes:
   - Guest ID (Primary Key)
   - First Name
   - Last Name
   - Contact Details
   - Preferences
+
+### 2. Rooms
+
+- Contains information about each room in the hotel.
+- Attributes:
+  - Room Number (Primary Key)
+  - Room Type
+  - Nightly Rate
 
 ### 3. Features
 
@@ -48,16 +48,7 @@ This document outlines the database solution for a Hotel Reservation System, inc
   - Description
   - Cost
 
-### 5. Services
-
-- Contains information on all additional services the hotel offers.
-- Attributes:
-  - Service ID (Primary Key)
-  - Name
-  - Description
-  - Cost
-
-### 6. RoomFeatures (Associative Table)
+### 5. RoomFeatures (Associative Table)
 
 - Facilitates a many-to-many relationship between Rooms and their corresponding features.
 - Attributes:
@@ -65,38 +56,52 @@ This document outlines the database solution for a Hotel Reservation System, inc
   - Room ID (Foreign Key to Rooms)
   - Feature ID (Foreign Key to Features)
 
-### 7. ReservationServices (Associative Table)
+### 6. ReservationServices (Associative Table)
 
 - Facilitates a many-to-many relationship between Reservations and Services.
 - Attributes:
   - ReservationService ID (Primary Key)
   - Reservation ID (Foreign Key to Reservations)
   - Service ID (Foreign Key to Services)
-  - Date
+  - Purchase Date
 
-### 8. Invoices (Associative Table)
+### 7. Invoices (Associative Table)
 
 - Generates invoices for guests based on reservations and additional services.
 - Attributes:
   - Invoice ID (Primary Key)
-  - Reservation ID (Foreign Key to Reservations)
   - Guest ID (Foreign Key to Guests)
-  - Service ID (Foreign Key to ReservationServices **optional**)
-  - Room Charges
-  - Services
-  - Tax
+  - Issue Date
+  - Total Cost
+  - Paid Status
+
+### 8. InvoiceReservationLink (Associative Table)
+
+- Facilitates a many-to-many relationship between Invoices and Reservations.
+- Attributes:
+  - Link ID (Primary Key)
+  - Invoice ID (Foreign Key to Invoices)
+  - Reservation ID (Foreign Key to Reservations)
+
+### 9. InvoiceServiceLink (Associative Table)
+
+- Facilitates a many-to-many relationship between Invoices and Reservations.
+- Attributes:
+  - Link ID (Primary Key)
+  - Invoice ID (Foreign Key to Invoices)
+  - Service ID (Foreign Key to Services)
 
 ## Views
 
-### 1. RoomOccupancy
+### 1. TotalCost
+
+- A view to check the total cost of reservations and services ordered by the guests.
+- Includes information on reservations and information on purchased services.
+
+### 2. RoomOccupancy
 
 - A view to track the current occupancy status of each room.
 - Includes room number, guest details, and reservation dates.
-
-### 2. ServiceCheck
-
-- A view to check the additional services ordered by guests.
-- Includes guest details, reservation information, and the services selected.
 
 ## Notes
 
