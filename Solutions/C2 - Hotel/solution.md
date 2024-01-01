@@ -48,7 +48,19 @@ This document outlines the database solution for a Hotel Reservation System, inc
   - Description
   - Cost
 
-### 5. RoomFeatures (Associative Table)
+### 5. Reservations (Associative Table)
+
+- Contains information on all reservations that are made.
+- Attributes:
+  - Reservation ID (Primary Key)
+  - Guest ID (Foreign Key to Guests)
+  - Room ID (Foreign Key to Rooms)
+  - Start Date
+  - End Date
+  - Check-in Status
+  - Total Cost
+
+### 6. RoomFeatures (Associative Table)
 
 - Facilitates a many-to-many relationship between Rooms and their corresponding features.
 - Attributes:
@@ -56,7 +68,7 @@ This document outlines the database solution for a Hotel Reservation System, inc
   - Room ID (Foreign Key to Rooms)
   - Feature ID (Foreign Key to Features)
 
-### 6. ReservationServices (Associative Table)
+### 7. ReservationServices (Associative Table)
 
 - Facilitates a many-to-many relationship between Reservations and Services.
 - Attributes:
@@ -65,7 +77,7 @@ This document outlines the database solution for a Hotel Reservation System, inc
   - Service ID (Foreign Key to Services)
   - Purchase Date
 
-### 7. Invoices (Associative Table)
+### 8. Invoices (Associative Table)
 
 - Generates invoices for guests based on reservations and additional services.
 - Attributes:
@@ -74,7 +86,7 @@ This document outlines the database solution for a Hotel Reservation System, inc
   - Issue Date
   - Paid Status
 
-### 8. InvoiceReservationLink (Associative Table)
+### 9. InvoiceReservationLink (Associative Table)
 
 - Facilitates a many-to-many relationship between Invoices and Reservations.
 - Attributes:
@@ -82,7 +94,7 @@ This document outlines the database solution for a Hotel Reservation System, inc
   - Invoice ID (Foreign Key to Invoices)
   - Reservation ID (Foreign Key to Reservations)
 
-### 9. InvoiceServiceLink (Associative Table)
+### 10. InvoiceServiceLink (Associative Table)
 
 - Facilitates a many-to-many relationship between Invoices and Reservations.
 - Attributes:
@@ -92,15 +104,50 @@ This document outlines the database solution for a Hotel Reservation System, inc
 
 ## Queries &  Views
 
-### 1. TotalCost
+### 1. Check Total Cost
 
-- A query to check the total cost of reservations and services ordered by the guests.
-- Includes information on reservations and information on purchased services.
+- A view to check the total cost of unpaid reservations and services ordered by a singular guest.
+- Includes information on reservations and purchased services.
 
-### 2. RoomOccupancy
+*To be completed...*
 
-- A view to track the current occupancy status of each room.
-- Includes room number, guest details, and reservation dates.
+### 2. Check Available Rooms
+
+- A view to track current available rooms.
+- Includes room numbers, room types and nightly rates.
+
+```sql
+CREATE VIEW AvailableRooms AS
+SELECT
+    Rooms.RoomNumber,
+    Rooms.RoomType,
+    Rooms.NightlyRate
+FROM Rooms
+WHERE Rooms.RoomNumber NOT IN (
+    SELECT Reservations.RoomID
+    FROM Reservations
+    WHERE CURRENT_DATE BETWEEN Reservations.CheckInDate AND Reservations.CheckOutDate
+);
+```
+
+### 3. Check Room Occupancy
+
+- A view to track the current occupancy status of a specific room.
+- Includes room number, guest details and reservation dates.
+
+```sql
+CREATE VIEW CheckRoom AS
+SELECT
+    R.RoomNumber,
+    G.GuestID,
+    G.FirstName,
+    G.LastName,
+    R.CheckInDate,
+    R.CheckOutDate
+FROM Reservations R
+JOIN Guests G ON R.GuestID = G.GuestID
+WHERE R.RoomNumber = [InputRoomNumber]
+```
 
 ## Notes
 
