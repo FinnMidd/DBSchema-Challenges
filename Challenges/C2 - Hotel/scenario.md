@@ -33,6 +33,25 @@ You have been tasked with designing a database for a Hotel Reservation System. T
 2. Include primary and foreign key constraints where necessary.
 3. Consider any additional attributes or constraints that would enhance the functionality of the Hotel Reservation System.
 
+## Additional Challenge
+
+Challenge yourself by creating the following queries and views to test your SQL knowledge. Use these tasks to enhance the functionality of the Hotel Reservation System.
+
+### 1. Check Total Cost
+
+- Create a view titled `UnpaidTotal` to check the total cost of unpaid reservations and services ordered by a singular guest.
+- Include information on reservations and purchased services.
+
+### 2. Check Available Rooms
+
+- Create a view titled `AvailableRooms` to track current available rooms.
+- Include room numbers, room types and nightly rates.
+
+### 3. Check Room Occupancy
+
+- Create a view titled `CheckRoom` to track the current occupancy status of a specific room.
+- Include room number, guest details and reservation dates.
+
 ## Notes
 
 - You can choose any relational database management system (e.g., MySQL, PostgreSQL) for implementing your database schema.
