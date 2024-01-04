@@ -76,7 +76,7 @@ This document outlines the database solution for a Library Management System, in
 - Includes transactions where books have been borrowed and yet to be returned.
 
 ```sql
-CREATE VIEW Returns AS
+CREATE VIEW AwaitingReturns AS
 SELECT TransactionID, UserID, CopyID, TransactionDate, ExpectedReturnDate, ReceivedReturnDate
 FROM Transactions
 WHERE (ReceivedReturnDate IS NULL AND ExpectedReturnDate < CURRENT_DATE);

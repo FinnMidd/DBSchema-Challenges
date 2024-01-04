@@ -34,6 +34,20 @@ You have been tasked with designing a database for a Library Management System. 
 2. Include primary and foreign key constraints where necessary.
 3. Consider any additional attributes or constraints that would enhance the functionality of the Library Management System.
 
+## Additional Challenge
+
+Challenge yourself by creating the following queries and views to test your SQL knowledge. Use these tasks to enhance the functionality of the Library Management System.
+
+### 1. Check Awaiting Returns
+
+- Design and implement a view named `AwaitingReturns` to track both overdue and expected return transactions.
+- Include transactions where books have been borrowed and are yet to be returned.
+
+### 2. Update Transactions on Return
+
+- Develop a query that efficiently updates the transaction table when a book is returned.
+- It will execute when a book has been received and entered back into the system.
+
 ## Notes
 
 - You can choose any relational database management system (e.g., MySQL, PostgreSQL) for implementing your database schema.
