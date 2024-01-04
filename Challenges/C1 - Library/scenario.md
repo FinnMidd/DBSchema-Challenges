@@ -34,7 +34,7 @@ You have been tasked with designing a database for a Library Management System. 
 2. Include primary and foreign key constraints where necessary.
 3. Consider any additional attributes or constraints that would enhance the functionality of the Library Management System.
 
-## Additional Challenge
+## Queries & Views
 
 Challenge yourself by creating the following queries and views to test your SQL knowledge. Use these tasks to enhance the functionality of the Library Management System.
 
