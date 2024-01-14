@@ -1,6 +1,6 @@
 # Challenge: Library Management System
 
-![Library Image](../../images/library-image.jpg)
+![Library Image](../../images/library-image.png)
 
 ## Scenario
 
