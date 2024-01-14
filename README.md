@@ -1,6 +1,6 @@
 # Database-Challenges
 
-![Database Image](../../images/database-image.png)
+![Database Image](images/database-image.png)
 
  Welcome to Database Challenges, a collection of database design challenges to enhance your skills in structuring and modeling databases. Each challenge presents a unique scenario, and your task is to create a well-organized database schema to meet the specified requirements. Challenge yourself, improve your database design abilities, and showcase your solutions to potential employers and collaborators. Feel free to fork, contribute, or use these challenges to practice and learn more about effective database design.
 
