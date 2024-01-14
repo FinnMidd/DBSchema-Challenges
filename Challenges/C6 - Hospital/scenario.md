@@ -1,5 +1,7 @@
 # Challenge: Hospital Management System
 
+![Hospital Image](../../images/hospital-image.png)
+
 ## Scenario
 
 You have been tasked with designing a database for a Hospital Management System. This system is crucial for efficiently managing patient records, medical staff, appointments, and various healthcare-related operations. Your goal is to create a robust database schema that supports the specific needs of the hospital.

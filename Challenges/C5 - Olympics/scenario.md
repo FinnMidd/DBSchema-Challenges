@@ -1,5 +1,7 @@
 # Challenge: Olympic Events Management System
 
+![Olympics Image](../../images/olympics-image.png)
+
 ## Scenario
 
 You have been selected to design a database for an Olympic Events Management System. This system is intended to streamline the organization and tracking of events during the Olympic Games. Your task is to create a database schema that supports the scheduling, participant management, and results tracking for various Olympic events.

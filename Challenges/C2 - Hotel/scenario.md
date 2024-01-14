@@ -1,5 +1,7 @@
 # Challenge: Hotel Reservation System
 
+![Hotel Image](../../images/hotel-image.png)
+
 ## Scenario
 
 You have been tasked with designing a database for a Hotel Reservation System. The hotel caters to various guests, offers different types of rooms, and manages reservations efficiently. Your goal is to create a robust database schema that supports the hotel's reservation process.

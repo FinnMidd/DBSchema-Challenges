@@ -1,5 +1,7 @@
 # Challenge: Music Streaming Service
 
+![Music Image](../../images/music-image.png)
+
 ## Scenario
 
 Congratulations! You have been hired to design the database for a cutting-edge music streaming service. This service aims to provide users with access to a vast library of songs, playlists curated by artists, and a personalized listening experience. Your task is to create a robust database schema that supports the functionality of the music streaming platform.

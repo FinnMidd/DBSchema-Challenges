@@ -1,5 +1,7 @@
 # Challenge: Military Bomb Squad Inventory Management System
 
+![Military Image](../../images/military-image.png)
+
 ## Scenario
 
 You are tasked with designing a database for a Military Bomb Squad Inventory Management System. This system is crucial for efficiently managing equipment, tracking inventory, and ensuring the safety of bomb squad personnel. Your goal is to create a robust database schema that supports the specific needs of the bomb squad.
