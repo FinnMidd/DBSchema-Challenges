@@ -1,5 +1,7 @@
 # Challenge: Library Management System
 
+![Library Image](../../images/Library-image.jpg)
+
 ## Scenario
 
 You have been tasked with designing a database for a Library Management System. The library serves multiple purposes, including book borrowing, returning, and managing the inventory of available books. Users, including both staff and library members, should be able to interact with the system seamlessly.
