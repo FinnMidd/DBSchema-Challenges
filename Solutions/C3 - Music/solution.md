@@ -21,14 +21,14 @@ This document outlines the database solution for a Music Streaming System, inclu
   - Username
   - Email
   - Password
-  - Created At (Timestamp)
+  - Subscription Type
 
 ### 2. Artists
 
 - Contains information about each music artist or band.
 - Attributes:
   - Artist ID (Primary Key)
-  - Artist Name
+  - Artist's Full Name
   - Genre
 
 ### 3. Songs
@@ -36,34 +36,63 @@ This document outlines the database solution for a Music Streaming System, inclu
 - Stores details about each song available on the platform.
 - Attributes:
   - Song ID (Primary Key)
-  - Song Title
   - Artist ID (Foreign Key to Artists)
-  - Genre
+  - Title
+  - Duration
   - Release Date
-  - Song Duration (in seconds)
-  - File Path or URL
+  - File Path
 
-### 4. Genres
+### 4. SongGenres (Associative Table)
+
+- Contains information on the genres each song belongs to.
+- Attributes:
+  - Link ID (Primary Key)
+  - Song ID (Foreign Key to Songs)
+  - Genre ID (Foreign Key to Genres)
+
+### 5. Genres
 
 - Stores information about different music genres.
 - Attributes:
   - Genre ID (Primary Key)
-  - Genre Name
+  - Name
+  - Description
 
-### 5. Playlists
+### 6. Playlists
 
 - Contains information on user-created playlists.
 - Attributes:
   - Playlist ID (Primary Key)
-  - Playlist Name
   - User ID (Foreign Key to Users)
-  - Created At (Timestamp)
+  - Playlist Name
 
-### 6. History
+### 7. PlaylistSongs (Associative Table)
+
+- Contains information on which songs are in which playlists.
+- Attributes:
+  - Link ID (Primary Key)
+  - Playlist ID (Foreign Key to Playlists)
+  - Song ID (Foreign Key to Songs)
+
+### 8. History
 
 - Stores information about the songs recently played by each user.
 - Attributes:
   - History ID (Primary Key)
   - User ID (Foreign Key to Users)
   - Song ID (Foreign Key to Songs)
-  - Playback Date (Timestamp)
+  - Playback Date
+
+## Queries & Views
+
+> **Note:**
+> This section is currently under development.
+
+## Notes
+
+- The database schema uses standard relational database concepts, including primary and foreign keys, to establish relationships between entities.
+- Consideration is given for user subscription types with an unspecified ENUM for each.
+- It is advisable to implement data pruning in the History table to enhance database efficiency and ensure the maintenance of pertinent user activity records.
+
+> **Notice:**
+>  Please note that this solution is a work in progress and may undergo further refinement based on specific requirements. Feel free to contribute or provide feedback where necessary.
